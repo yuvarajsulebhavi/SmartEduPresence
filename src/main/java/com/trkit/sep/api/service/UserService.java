@@ -47,4 +47,8 @@ public class UserService {
 		return dao.getAllFaculties();
 	}
 
+	public List<User> getAllStudents() {
+		return dao.getAllStudents();
+	}
+
 }

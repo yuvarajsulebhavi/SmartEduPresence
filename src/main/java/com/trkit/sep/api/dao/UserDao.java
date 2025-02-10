@@ -159,4 +159,21 @@ public class UserDao {
 		return list;
 	}
 
+	public List<User> getAllStudents() {
+		Session session = null;
+		List<User> list = null;
+		try {
+			session = factory.openSession();
+			Criteria criteria = session.createCriteria(User.class);
+			criteria.add(Restrictions.eq("role", "student"));
+			list = criteria.list();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return list;
+	}
+
 }

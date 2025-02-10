@@ -68,6 +68,11 @@ public class UserController {
 		return service.getAllFaculties();
 	}
 
+	@GetMapping("/get-all-student")
+	public List<User> getAllStudents() {
+		return service.getAllStudents();
+	}
+
 	@DeleteMapping("/delete-user-by-username")
 	public String deleteUserById(@RequestParam String username) {
 		return service.deleteUserById(username);
